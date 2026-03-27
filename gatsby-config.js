@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://therussianend.com",
+    siteUrl: "https://therussianend.net",
     siteName: "The Russian End",
     twitterUrl: "https://x.com/TheRussianEnd",
     siteEmail: "therussianend@gmail.com",
+    description: "Documented suicides by Russian soldiers in Ukraine",
+    ogDescription: "Documented self-inflicted deaths by Russian soldiers in Ukraine",
+    keywords: "russian soldiers, russian suicides, ukraine war",
   },
   plugins: [
     {
