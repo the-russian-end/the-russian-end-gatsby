@@ -17,6 +17,5 @@ exports.onRenderBody = function({ setBodyAttributes, setHtmlAttributes, setHeadC
     React.createElement("meta", { key: "theme-color", name: "theme-color", content: "#102026" }),
     React.createElement("link", { key: "favicon", rel: "icon shortcut", sizes: "32x32", href: "/icon.png" }),
     React.createElement("link", { key: "apple-touch-icon", rel: "apple-touch-icon", href: "/icon_192.png" }),
-    React.createElement("link", { key: "bootstrap-css", rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css", crossOrigin: "anonymous" }),
   ]);
 };

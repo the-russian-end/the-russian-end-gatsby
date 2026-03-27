@@ -111,7 +111,7 @@ export default function ListTemplate({ pageContext }) {
                 />
 
                 <div className="position-absolute top-0 start-0 m-3 hstack gap-2 align-items-start">
-                  <span className="badge text-dark bg-white fs-6 fw-semibold">
+                  <span className="badge text-dark bg-white  fs-6 fw-semibold">
                     #{c.number}
                   </span>
                   {c.inconclusive && (
