@@ -85,17 +85,13 @@ body {
     }
   }
 
-  .text-lighter {
-    color: $base-color-30 !important;
-  }
-
   h3 {
     line-height: 140%;
   }
 
   &:hover {
-    .bg-warning {
-      background-color: #fff !important;
+    .bg-white{
+      background-color: #ffc107 !important;
     }
   }
 }

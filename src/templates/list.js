@@ -27,7 +27,7 @@ export default function ListTemplate({ pageContext }) {
   const sortedYears = Object.keys(yearMap).sort((a, b) => b - a);
 
   return (
-    <Layout filterType={filterType}>
+    <Layout filterType={filterType} isList={true}>
       <div className="row justify-content-center mb-4">
         <div className="col-12 col-lg-10 col-xl-9">
           <p>War in Ukraine revealed a great deal of documented self-inflicted deaths by Russian soldiers on the battlefield. As of today <b class="fw-bold text-light">{conclusiveCount} of them<sup>†</sup></b> arrived at suicide as the best possible outcome, and were filmed committing one. Puzzling to think about and terrible to watch, this phenomena seems increasingly characteristic for Russian army, truly unmatched in this grim respect.</p>
@@ -111,7 +111,7 @@ export default function ListTemplate({ pageContext }) {
                 />
 
                 <div className="position-absolute top-0 start-0 m-3 hstack gap-2 align-items-start">
-                  <span className="badge text-dark bg-warning fs-6 fw-medium">
+                  <span className="badge text-dark bg-white fs-6 fw-semibold">
                     #{c.number}
                   </span>
                   {c.inconclusive && (

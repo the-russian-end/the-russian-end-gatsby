@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-export default function Layout({ children, filterType }) {
+export default function Layout({ children, filterType, isList }) {
   const data = useStaticQuery(graphql`
     query SiteMetaQuery {
       site {
@@ -24,7 +24,7 @@ export default function Layout({ children, filterType }) {
           <div className="navbar">
             <a
               href="/"
-              className={"position-absolute top-50 start-50 translate-middle text-nowrap fs-4 " + (!filterType ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}
+              className={"position-absolute top-50 start-50 translate-middle text-nowrap fs-4 " + ((isList && !filterType) ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}
             >
               {siteName}
             </a>

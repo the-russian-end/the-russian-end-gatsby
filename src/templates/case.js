@@ -51,7 +51,7 @@ export default function CaseTemplate({ data, pageContext }) {
   } = frontmatter;
 
   return (
-    <Layout>
+    <Layout isList={false}>
       <div className="row justify-content-center mb-4">
         <div className="col-12 col-lg-8 col-xl-7">
           <div className="vstack align-items-start gap-2 mb-4">
@@ -66,7 +66,7 @@ export default function CaseTemplate({ data, pageContext }) {
                 </span>
               )}
 
-              <span className="badge bg-warning text-dark fs-5 fw-medium">
+              <span className="badge bg-warning text-dark fs-5 fw-semibold">
                 #{number}
               </span>
 
