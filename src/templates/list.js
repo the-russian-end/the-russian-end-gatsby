@@ -30,21 +30,21 @@ export default function ListTemplate({ pageContext }) {
     <Layout filterType={filterType} isList={true}>
       <div className="row justify-content-center mb-4">
         <div className="col-12 col-lg-10 col-xl-9">
-          <p>War in Ukraine revealed a great deal of documented self-inflicted deaths by Russian soldiers on the battlefield. As of today <b class="fw-bold text-light">{conclusiveCount} of them<sup>†</sup></b> arrived at suicide as the best possible outcome, and were filmed committing one. Puzzling to think about and terrible to watch, this phenomena seems increasingly characteristic for Russian army, truly unmatched in this grim respect.</p>
+          <p>War in Ukraine revealed a great deal of documented self-inflicted deaths by Russian soldiers on the battlefield. As of today <b className="fw-bold text-light">{conclusiveCount} of them<sup>†</sup></b> arrived at suicide as the best possible outcome, and were filmed committing one. Puzzling to think about and terrible to watch, this phenomena seems increasingly characteristic for Russian army, truly unmatched in this grim respect.</p>
 
           <p>While everyone can conteplate the reasons, the goal of this page is to merely document these bizzare acts in light of their public significance. We're sourcing data from social media.</p>
 
           <div className="hstack flex-wrap gap-4 smaller mt-4">
             <ul className="list-unstyled hstack gap-4 m-0">
               <li className="vstack align-items-start gap-1">
-                <span className={"d-block" + (filterType == "conclusive" ? " hl text-dark bg-warning fw-semibold" : "")}>† Conclusive</span>
-                <a href="/conclusive" className={"fs-5 " + (filterType == "conclusive" ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}>
+                <span className={"d-block" + (filterType === "conclusive" ? " hl text-dark bg-warning fw-semibold" : "")}>† Conclusive</span>
+                <a href="/conclusive" className={"fs-5 " + (filterType === "conclusive" ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}>
                   {conclusiveCount}
                 </a>
               </li>
               <li className="vstack align-items-start gap-1">
-                <span className={"d-block" + (filterType == "inconclusive" ? " hl text-dark bg-warning fw-semibold" : "")}>Inconclusive</span>
-                <a href="/inconclusive" className={"fs-5 " + (filterType == "inconclusive" ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}>
+                <span className={"d-block" + (filterType === "inconclusive" ? " hl text-dark bg-warning fw-semibold" : "")}>Inconclusive</span>
+                <a href="/inconclusive" className={"fs-5 " + (filterType === "inconclusive" ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}>
                   {inconclusiveCount}
                 </a>
               </li>

@@ -17,5 +17,12 @@ exports.onRenderBody = function({ setBodyAttributes, setHtmlAttributes, setHeadC
     React.createElement("meta", { key: "theme-color", name: "theme-color", content: "#102026" }),
     React.createElement("link", { key: "favicon", rel: "icon shortcut", sizes: "32x32", href: "/icon.png" }),
     React.createElement("link", { key: "apple-touch-icon", rel: "apple-touch-icon", href: "/icon_192.png" }),
+    React.createElement("script", { key: "ga-script", async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-0N2GPF45LS"}),
+    React.createElement("script", { key: "ga-config", dangerouslySetInnerHTML: { __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0N2GPF45LS');
+    `}}),
   ]);
 };
