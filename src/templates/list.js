@@ -12,12 +12,17 @@ function formatDate(dateStr) {
 
 export function Head({ pageContext }) {
   const { filterType, filterValue, siteName } = pageContext;
-  let title = siteName;
-  if (filterType === "conclusive")   title = "Conclusive Cases";
-  else if (filterType === "inconclusive") title = "Inconclusive Cases";
+  let title = null;
+  if (filterType === "conclusive") title = `Conclusive`;
+  else if (filterType === "inconclusive") title = `Inconclusive `;
   else if (filterType === "method") title = `Method: ${filterValue}`;
-  else if (filterType === "year") title = String(filterValue);
-  else if (filterType === "month") title = String(filterValue);
+  else if (filterType === "year") title = `${String(filterValue)}`;
+  else if (filterType === "month") title = `${MONTH_NAMES[parseInt(filterValue.split("/")[1]) - 1]} ${filterValue.split("/")[0]}`;
+  if (!title) {
+    title = siteName;
+  } else {
+    title += ` – ${siteName}`;
+  }
   return <title>{title}</title>;
 }
 
@@ -74,7 +79,7 @@ export default function ListTemplate({ pageContext }) {
                       {yearData.total}
                     </a>
                     <ul className="list-unstyled hstack gap-3 m-0 mt-1">
-                      {sortedMonths.map((month) => (
+                      {sortedMonths.reverse().map((month) => (
                         <li key={month} className="vstack align-items-start gap-1 flex-grow-0">
                           <span className={"d-block" + (filterType === "month" && filterValue === `${year}/${month}` ? " hl text-dark bg-warning fw-semibold" : "")}>
                             {MONTH_NAMES[parseInt(month) - 1]}

@@ -32,8 +32,7 @@ function HtmlContent({ html }) {
 
 export function Head({ data, pageContext }) {
   const { number } = pageContext;
-  const { caption } = data.markdownRemark.frontmatter;
-  return <title>#{number} – {caption}</title>;
+  return <title>#{number} – {data.site.siteMetadata.siteName}</title>;
 }
 
 export default function CaseTemplate({ data, pageContext }) {
@@ -149,6 +148,11 @@ export const query = graphql`
         nsfl
         inconclusive
         comment
+      }
+    }
+    site {
+      siteMetadata {
+        siteName
       }
     }
   }
