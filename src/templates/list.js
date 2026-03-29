@@ -29,7 +29,7 @@ export function Head({ pageContext }) {
 export default function ListTemplate({ pageContext }) {
   const { cases, currentPage, totalPages, basePath, stats, filterType, filterValue } = pageContext;
   const { conclusiveCount, inconclusiveCount, methodMap, yearMap } = stats;
-  const sortedYears = Object.keys(yearMap).sort((a, b) => b - a);
+  const sortedYears = Object.keys(yearMap).sort((a, b) => a - b);
 
   return (
     <Layout filterType={filterType} isList={true}>
@@ -79,7 +79,7 @@ export default function ListTemplate({ pageContext }) {
                       {yearData.total}
                     </a>
                     <ul className="list-unstyled hstack gap-3 m-0 mt-1">
-                      {sortedMonths.reverse().map((month) => (
+                      {sortedMonths.map((month) => (
                         <li key={month} className="vstack align-items-start gap-1 flex-grow-0">
                           <span className={"d-block" + (filterType === "month" && filterValue === `${year}/${month}` ? " hl text-dark bg-warning fw-semibold" : "")}>
                             {MONTH_NAMES[parseInt(month) - 1]}
