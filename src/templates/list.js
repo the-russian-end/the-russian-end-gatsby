@@ -56,7 +56,7 @@ export default function ListTemplate({ pageContext }) {
             </ul>
 
             <ul className="list-unstyled hstack gap-3 m-0">
-              {Object.entries(methodMap).map(([method, count]) => (
+              {Object.entries(methodMap).sort((a, b) => b[1] - a[1]).map(([method, count]) => (
                 <li key={method} className="vstack align-items-start gap-1">
                   <span className={"d-block" + (filterType === "method" && filterValue === method ? " hl text-dark bg-warning fw-semibold" : "")}>
                     {method.charAt(0).toUpperCase() + method.slice(1).toLowerCase()}
