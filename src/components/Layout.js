@@ -24,7 +24,7 @@ export default function Layout({ children, filterType, isList }) {
           <div className="navbar">
             <a
               href="/"
-              className={"position-absolute top-50 start-50 translate-middle text-nowrap fs-4 " + ((isList && !filterType) ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}
+              className={"position-absolute top-50 start-50 translate-middle text-nowrap fs-4 px-2 " + ((isList && !filterType) ? "hl text-dark bg-warning fw-semibold text-decoration-none" : "link-light link-underline-opacity-25 link-underline-opacity-50-hover link-offset-2")}
             >
               {siteName}
             </a>
